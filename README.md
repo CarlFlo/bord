@@ -4,6 +4,12 @@ Bord is a simple to use logger for the [GO](https://golang.org/) programming lan
 
 100% test coverage
 
+## Features
+- Detailed logging showing the time, file and line of where the logging message comes from
+- Customizable. You can select which types of logging messages you want
+- Simplistic. No configuration to get started
+
+
 ## Install
 
 ```
@@ -61,14 +67,14 @@ A bitmask is used to calcualte what get showed:
 * info = 8
 * debug = 16
 
-This allows you to input a prepared value to toggle the desired logging.
+This allows you to input a prepared value, i.e. from a configuration file, to toggle the desired logging.
 ```go
-bord.SetLogBitmask(31) // Will turn on everything
-bord.SetLogBitmask(27) // Will turn on everything except warnings (4)
+bord.SetLogBitmask(31) // Will turn on everything 1+2+4+8+16=31
+bord.SetLogBitmask(27) // Will turn on everything except warnings (4) 1+2+8+16=27
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
-The default output is **os.Stderr**, but this can be changed with
+The default output is **os.Stderr**, but this can be changed with:
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
