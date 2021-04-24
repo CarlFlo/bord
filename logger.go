@@ -30,14 +30,6 @@ func init() {
 	logBitmask = logCustom | logError | logWarning | logInfo | logDebug
 }
 
-func main() {
-	Error("This is a test '%s'", "haha")
-	Warn("This is a test '%s'", "haha")
-	Info("This is a test '%s'", "haha")
-	Debug("This is a test '%s'", "haha")
-	Custom(os.Stderr, "CUSTOM", "This is a test '%s'", "haha")
-}
-
 func Error(format string, args ...interface{}) {
 	formatter(defaultWriter, logError, "ERROR", format, args...)
 }
