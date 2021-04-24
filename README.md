@@ -24,7 +24,7 @@ The goal of Board is to make powerful logging simple.
 
 You are able to get started with no configuration required.
 
-By default will Bord output to **os.Stderr** and output all types of loggin
+By default will Bord output to **os.Stderr** and output **all types** of log messages
 
 
 Example syntax is:
