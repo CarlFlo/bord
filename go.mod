@@ -1,3 +1,3 @@
-module github.com/CarlFlo/GoDiscordBotTemplate/bord
+module github.com/CarlFlo/bord
 
 go 1.16
