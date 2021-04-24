@@ -65,14 +65,14 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 	message := fmt.Sprintf(format, args...)
 
 	// <date and time> [<log level>] .\<filePath>:<line number> <formatted message>\n
-	fmt.Fprintf(writer, "%s [%s] .\\%s:%d %s\n", now, logLevelString, fileName, line, message)
+	fmt.Fprintf(writer, "%s [%s] %s:%d %s\n", now, logLevelString, fileName, line, message)
 	return true
 }
 
 // This function retrieves the file which called the
 // logging funtion and which line from where it was called
 func getDetails() (string, int) {
-	_, path, line, _ := runtime.Caller(2)
+	_, path, line, _ := runtime.Caller(3)
 	paths := strings.Split(path, "/")
 	file := paths[len(paths)-1]
 
