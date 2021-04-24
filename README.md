@@ -30,7 +30,7 @@ bord.Debug("This is a debug message '%s'", "<debug message>")
 bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log level tag", "custom")
 ```
 
-Each of the functions will return **true** if the message could be logged, i.e. printed to designated io.Writer, and **false** if it was blocked.
+Each of the logging functions above will return **true** if the message could be logged, i.e. printed to designated io.Writer, and **false** if it was blocked.
 
 ## Options & Customization
 
