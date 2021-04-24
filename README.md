@@ -2,6 +2,8 @@
 
 Bord is a logger for the [GO](https://golang.org/) programming language
 
+100% test coverage
+
 ## Install
 
 ```
@@ -12,9 +14,11 @@ The main functionality is working, but i'm always working to improve the package
 
 ## Usage
 
-- The goal of Board is to make powerful logging simple.
-- You are able to get started with no configuration required.
-- By default will Bord output to **os.Stderr** and output all types of loggin
+The goal of Board is to make powerful logging simple.
+
+You are able to get started with no configuration required.
+
+By default will Bord output to **os.Stderr** and output all types of loggin
 
 
 Example syntax is:
@@ -63,7 +67,3 @@ The default output is **os.Stderr**, but this can be changed with
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
-
-## Todo
-
-- [ ] Test coverage
