@@ -33,8 +33,8 @@ Example syntax is:
   bord.Warn("This is a warning message '%s'", "<warning message>")
   bord.Info("This is an info message '%s'", "<info message>")
   bord.Debug("This is a debug message '%s'", "<debug message>")
-  bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log level tag", "custom")
-  bord.Custom(os.Stderr, "NETWORK", "Another example with a different log level")
+  bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log tag", "custom")
+  bord.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 ```
 
 Each of the logging functions above will return **True** if the *message could be logged* and **False** if it was blocked by a setting.
