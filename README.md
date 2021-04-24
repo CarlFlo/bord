@@ -1,6 +1,6 @@
 # Bord
 
-Bord is a logger for the [GO](https://golang.org/) programming language
+Bord is a simple to use logger for the [GO](https://golang.org/) programming language
 
 100% test coverage
 
