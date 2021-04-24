@@ -4,7 +4,7 @@ Bord is a logger for the [GO](https://golang.org/) programming language
 
 ## Usage
 
-Using Bord is simple as its possible to import the package anyhwere it is required 
+Using Bord is simple as it is possible to import the package anywhere it is required 
 
 Example syntax is:
 ```go
@@ -48,6 +48,11 @@ bord.SetLogBitmask(27) // Will turn on everything except warnings
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
-## Test coverage
+The default output is os.Stderr, but this can be changed with
+```go
+bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
+```
 
-Todo
+## Todo
+
+- [ ] Test coverage
