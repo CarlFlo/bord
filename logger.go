@@ -1,4 +1,4 @@
-package main
+package bord
 
 import (
 	"fmt"
