@@ -5,9 +5,9 @@ Bord is a simple to use logger for the [GO](https://golang.org/) programming lan
 100% test coverage
 
 ## Features
-- Detailed logging showing the time, file and line of where the logging message comes from
-- Customizable. You can select which types of logging messages you want
-- Simplistic. No configuration to get started
+- Detailed logging showing the message origin file, calling function and line.
+- Customizable. Select what types of logging messages you want
+- Simplistic. No configuration to get started and easy to change how you want it
 
 
 ## Install
