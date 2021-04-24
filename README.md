@@ -63,8 +63,8 @@ A bitmask is used to calcualte what get showed:
 
 This allows you to input a prepared value, i.e. from a configuration file, to toggle the desired logging.
 ```go
-bord.SetLogBitmask(31) // Will turn on everything
-bord.SetLogBitmask(27) // Will turn on everything except warnings (4)
+bord.SetLogBitmask(31) // Will turn on everything 1+2+4+8+16=31
+bord.SetLogBitmask(27) // Will turn on everything except warnings (4) 1+2+8+16=27
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
