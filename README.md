@@ -30,9 +30,14 @@ bord.Debug("This is a debug message '%s'", "<debug message>")
 bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log level tag", "custom")
 ```
 
+Each of the functions will return **true** if the message could be logged, i.e. printed to designated io.Writer, and **false** if it was blocked.
+
 ## Options & Customization
 
 To customize what logging messages that get displayed can the following syntax be used to change the settings
+
+Each of these functions will return the updated bitmap (uint8)
+
 ```go
 // To turn on indivudual logging
 bord.SetLogError(true)
