@@ -61,14 +61,14 @@ A bitmask is used to calcualte what get showed:
 * info = 8
 * debug = 16
 
-This allows you to input a prepared value to toggle the desired logging.
+This allows you to input a prepared value, i.e. from a configuration file, to toggle the desired logging.
 ```go
 bord.SetLogBitmask(31) // Will turn on everything
 bord.SetLogBitmask(27) // Will turn on everything except warnings (4)
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
-The default output is **os.Stderr**, but this can be changed with
+The default output is **os.Stderr**, but this can be changed with:
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
