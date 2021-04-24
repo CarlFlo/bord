@@ -2,6 +2,12 @@
 
 Bord is a logger for the [GO](https://golang.org/) programming language
 
+## Install
+
+```
+go get github.com/CarlFlo/bord
+```
+
 ## Usage
 
 Using Bord is simple as it is possible to import the package anywhere it is required 
