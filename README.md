@@ -56,7 +56,7 @@ A bitmask is used to calcualte what get showed:
 * info = 8
 * debug = 16
 
-This allows you to input a prepared value to toggle the logging that is desired
+This allows you to input a prepared value to toggle the desired logging.
 ```go
 bord.SetLogBitmask(31) // Will turn on everything
 bord.SetLogBitmask(27) // Will turn on everything except warnings (4)
