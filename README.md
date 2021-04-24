@@ -12,9 +12,9 @@ The main functionality is working, but i'm always working to improve the package
 
 ## Usage
 
-The goal of Board is to make powerful logging simple.
-You are able to get started with no configuration required.
-By default will Bord output to **os.Stderr** and allow all types of loggin
+- The goal of Board is to make powerful logging simple.
+- You are able to get started with no configuration required.
+- By default will Bord output to **os.Stderr** and output all types of loggin
 
 
 Example syntax is:
