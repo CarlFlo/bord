@@ -8,9 +8,14 @@ Bord is a logger for the [GO](https://golang.org/) programming language
 go get github.com/CarlFlo/bord
 ```
 
+The main functionality is working, but i'm always working to improve the package and fix bugs.
+
 ## Usage
 
-Using Bord is simple as it is possible to import the package anywhere it is required 
+The goal of Board is to make powerful logging simple.
+You are able to get started with no configuration required.
+By default will Bord output to **os.Stderr** and allow all types of loggin
+
 
 Example syntax is:
 ```go
@@ -23,7 +28,7 @@ bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log level t
 
 ## Options
 
-To customize what logging messages that get displayd can the following syntax be used
+To customize what logging messages that get displayed can the following syntax be used to change the settings
 ```go
 // To turn on indivudual logging
 LogError(true)
