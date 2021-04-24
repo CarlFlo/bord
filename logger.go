@@ -30,32 +30,33 @@ func init() {
 	logBitmask = logCustom | logError | logWarning | logInfo | logDebug
 }
 
-func Error(format string, args ...interface{}) {
-	formatter(defaultWriter, logError, "ERROR", format, args...)
+func Error(format string, args ...interface{}) bool {
+	return formatter(defaultWriter, logError, "ERROR", format, args...)
 }
 
-func Warn(format string, args ...interface{}) {
-	formatter(defaultWriter, logWarning, "WARN", format, args...)
+func Warn(format string, args ...interface{}) bool {
+	return formatter(defaultWriter, logWarning, "WARN", format, args...)
 }
 
-func Info(format string, args ...interface{}) {
-	formatter(defaultWriter, logInfo, "INFO", format, args...)
+func Info(format string, args ...interface{}) bool {
+	return formatter(defaultWriter, logInfo, "INFO", format, args...)
 }
 
-func Debug(format string, args ...interface{}) {
-	formatter(defaultWriter, logDebug, "DEBUG", format, args...)
+func Debug(format string, args ...interface{}) bool {
+	return formatter(defaultWriter, logDebug, "DEBUG", format, args...)
 }
 
 // A custom logger that can be used
-func Custom(writer io.Writer, logLevelString string, format string, args ...interface{}) {
+func Custom(writer io.Writer, logLevelString string, format string, args ...interface{}) bool {
 	// The numerical log level for a custom log message is 1
-	formatter(writer, 1, logLevelString, format, args...)
+	return formatter(writer, 1, logLevelString, format, args...)
 }
 
-func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string, format string, args ...interface{}) {
+// Returns true on success and false on block
+func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string, format string, args ...interface{}) bool {
 
 	if numericalLogLevel&logBitmask == 0 {
-		return
+		return false
 	}
 
 	now := time.Now().Format("2006-01-02 15:04:05")
@@ -65,6 +66,7 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 
 	// <date and time> [<log level>] .\<filePath>:<line number> <formatted message>\n
 	fmt.Fprintf(writer, "%s [%s] .\\%s:%d %s\n", now, logLevelString, fileName, line, message)
+	return true
 }
 
 // This function retrieves the file which called the
