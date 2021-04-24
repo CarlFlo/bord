@@ -48,7 +48,7 @@ bord.SetLogBitmask(27) // Will turn on everything except warnings
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
-The default output is os.Stderr, but this can be changed with
+The default output is **os.Stderr**, but this can be changed with
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
