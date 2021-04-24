@@ -35,11 +35,11 @@ LogCustom(false)
 ```
 
 A bitmask is used to calcualte what get showed:
-* custom = 1
-* error = 2
-* warning = 4
-* info = 8
-* debug = 16
+1. custom
+2. error
+4. warning
+8. info
+16. debug
 
 This allows you to input a prepared value to toggle the logging that is desired
 ```go
