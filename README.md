@@ -34,17 +34,17 @@ LogDebug(false)
 LogCustom(false)
 ```
 
-A bitmask is used to calcualte what get showed so
-custom = 1
-error = 2
-warning = 4
-info = 8
-debug = 16
+A bitmask is used to calcualte what get showed:
+* custom = 1
+* error = 2
+* warning = 4
+* info = 8
+* debug = 16
 
-This allows you to input a prepared value to toggle all logging that is desired
+This allows you to input a prepared value to toggle the logging that is desired
 ```go
 bord.SetLogBitmask(31) // Will turn on everything
-bord.SetLogBitmask(27) // Will turn on everything except warnings
+bord.SetLogBitmask(27) // Will turn on everything except warnings (4)
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
