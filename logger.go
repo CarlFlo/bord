@@ -60,23 +60,27 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 	}
 
 	now := time.Now().Format("2006-01-02 15:04:05")
-	fileName, line := getDetails()
+	fileName, caller, line := getDetails()
 
 	message := fmt.Sprintf(format, args...)
 
 	// <date and time> [<log level>] .\<filePath>:<line number> <formatted message>\n
-	fmt.Fprintf(writer, "%s [%s] %s:%d %s\n", now, logLevelString, fileName, line, message)
+	fmt.Fprintf(writer, "%s [%s] %s:%d:%s() %s\n", now, logLevelString, fileName, line, caller, message)
 	return true
 }
 
 // This function retrieves the file which called the
 // logging funtion and which line from where it was called
-func getDetails() (string, int) {
-	_, path, line, _ := runtime.Caller(3)
+func getDetails() (string, string, int) {
+	pc, path, line, _ := runtime.Caller(3)
 	paths := strings.Split(path, "/")
 	file := paths[len(paths)-1]
 
-	return file, line
+	caller := runtime.FuncForPC(pc).Name()
+	stack := strings.Split(caller, ".")
+	caller = stack[len(stack)-1]
+
+	return file, caller, line
 }
 
 // Allows for changing of the default io.Writer that the logger uses
