@@ -92,23 +92,23 @@ func SetLogBitmask(bitmask uint8) {
 
 // These functions allows the user to toggle each type of log individually
 // Returns the logBitmask after the chang
-func LogError(b bool) uint8 {
+func SetLogError(b bool) uint8 {
 	logToggle(b, logError)
 	return logBitmask
 }
-func LogWarning(b bool) uint8 {
+func SetLogWarning(b bool) uint8 {
 	logToggle(b, logWarning)
 	return logBitmask
 }
-func LogInfo(b bool) uint8 {
+func SetLogInfo(b bool) uint8 {
 	logToggle(b, logInfo)
 	return logBitmask
 }
-func LogDebug(b bool) uint8 {
+func SetLogDebug(b bool) uint8 {
 	logToggle(b, logDebug)
 	return logBitmask
 }
-func LogCustom(b bool) uint8 {
+func SetLogCustom(b bool) uint8 {
 	logToggle(b, logCustom)
 	return logBitmask
 }

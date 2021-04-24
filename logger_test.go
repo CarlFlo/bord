@@ -51,44 +51,44 @@ func TestLoggingOff(t *testing.T) {
 
 func TestIndividual(t *testing.T) {
 
-	LogError(true)
+	SetLogError(true)
 	if ok := Error("Test %s", "error"); !ok {
 		t.Fatalf("Logging error failed when it should have worked\n")
 	}
-	LogWarning(true)
+	SetLogWarning(true)
 	if ok := Warn("Test %s", "warn"); !ok {
 		t.Fatalf("Logging warn failed when it should have worked\n")
 	}
-	LogInfo(true)
+	SetLogInfo(true)
 	if ok := Info("Test %s", "info"); !ok {
 		t.Fatalf("Logging info failed when it should have worked\n")
 	}
-	LogDebug(true)
+	SetLogDebug(true)
 	if ok := Debug("Test %s", "debug"); !ok {
 		t.Fatalf("Logging debug failed when it should have worked\n")
 	}
-	LogCustom(true)
+	SetLogCustom(true)
 	if ok := Custom(ioutil.Discard, "CUSTOM", "Test %s", "custom"); !ok {
 		t.Fatalf("Logging custom failed it should have worked\n")
 	}
 
-	LogError(false)
+	SetLogError(false)
 	if ok := Error("Test %s", "error"); ok {
 		t.Fatalf("Logging error worked when it should have failed\n")
 	}
-	LogWarning(false)
+	SetLogWarning(false)
 	if ok := Warn("Test %s", "warn"); ok {
 		t.Fatalf("Logging warn worked when it should have failed\n")
 	}
-	LogInfo(false)
+	SetLogInfo(false)
 	if ok := Info("Test %s", "info"); ok {
 		t.Fatalf("Logging info worked when it should have failed\n")
 	}
-	LogDebug(false)
+	SetLogDebug(false)
 	if ok := Debug("Test %s", "debug"); ok {
 		t.Fatalf("Logging debug worked when it should have failed\n")
 	}
-	LogCustom(false)
+	SetLogCustom(false)
 	if ok := Custom(ioutil.Discard, "CUSTOM", "Test %s", "custom"); ok {
 		t.Fatalf("Logging custom worked it should have failed\n")
 	}

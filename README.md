@@ -35,18 +35,18 @@ bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log level t
 To customize what logging messages that get displayed can the following syntax be used to change the settings
 ```go
 // To turn on indivudual logging
-LogError(true)
-LogWarning(true)
-LogInfo(true)
-LogDebug(true)
-LogCustom(true)
+SetLogError(true)
+SetLogWarning(true)
+SetLogInfo(true)
+SetLogDebug(true)
+SetLogCustom(true)
 
 // To turn off indivudual logging
-LogError(false)
-LogWarning(false)
-LogInfo(false)
-LogDebug(false)
-LogCustom(false)
+SetLogError(false)
+SetLogWarning(false)
+SetLogInfo(false)
+SetLogDebug(false)
+SetLogCustom(false)
 ```
 
 A bitmask is used to calcualte what get showed:
