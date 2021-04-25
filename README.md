@@ -81,4 +81,4 @@ bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 
 ## TODO
 
-[ ] Option for 'verbosity'. Being able to change verbose level for different type of log message types
+- [ ] Option for 'verbosity'. Being able to change verbose level for different type of log message types
