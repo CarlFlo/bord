@@ -78,3 +78,7 @@ The default output is **os.Stderr**, but this can be changed with:
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
+
+## TODO
+
+[ ] Option for 'verbosity'. Being able to change verbose level for different type of log message types
