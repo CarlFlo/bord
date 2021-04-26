@@ -11,7 +11,7 @@ func init() {
 
 func TestLoggingOn(t *testing.T) {
 
-	SetLogBitmask(31) // 1+2+4+8+16=31
+	SetLogBitmask(63) // 1+2+4+8+16+32=63
 	if ok := Error("Test %s", "error"); !ok {
 		t.Fatalf("Logging error failed when it should have worked\n")
 	}
