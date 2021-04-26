@@ -11,11 +11,12 @@ import (
 
 // Here are the various types of logs that can be used
 const (
-	logCustom uint8 = 1 << iota
+	logFatal uint8 = 1 << iota
 	logError
 	logWarning
 	logInfo
 	logDebug
+	logCustom
 )
 
 var (
@@ -27,7 +28,14 @@ var (
 func init() {
 
 	defaultWriter = os.Stderr
-	logBitmask = logCustom | logError | logWarning | logInfo | logDebug
+	logBitmask = logFatal | logError | logWarning | logInfo | logDebug | logCustom
+}
+
+// This is the only logging that wont return a bool if it worked as it will
+// work similarly to log.Fatal
+func Fatal(format string, args ...interface{}) {
+	formatter(defaultWriter, logFatal, "FATAL", format, args...)
+	os.Exit(1)
 }
 
 func Error(format string, args ...interface{}) bool {
@@ -72,7 +80,13 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 // This function retrieves the file which called the
 // logging funtion and which line from where it was called
 func getDetails() (string, string, int) {
-	pc, path, line, _ := runtime.Caller(3)
+	pc, path, line, ok := runtime.Caller(3)
+
+	// Something went wrong
+	if !ok {
+		return "???", "???", -1
+	}
+
 	paths := strings.Split(path, "/")
 	file := paths[len(paths)-1]
 
