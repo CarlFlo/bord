@@ -108,4 +108,5 @@ bord.SetTimeFormat("2006-01-02 15:04:05")
 - [X] Additional message logging types (such as Custom and Fatal)
 - [X] Test coverage above at least 80%
 - [X] Additional error checking
+- [X] Ability to change time format
 - [ ] Option for 'verbosity' for each type of log message
