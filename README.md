@@ -1,6 +1,6 @@
 # Bord
 
-Bord is a simple to use logger for the [GO](https://golang.org/) programming language
+Bord is a simple to use logger for the [GO](https://golang.org/) programming language.
 
 Test coverage: **93.6%**
 
@@ -16,7 +16,7 @@ Test coverage: **93.6%**
 go get github.com/CarlFlo/bord
 ```
 
-The main functionality is working, but i'm always working to improve the package and fix bugs.
+The main functionality is working, but i'm always working to improve and fix bugs within the package.
 
 ## Usage
 
@@ -40,7 +40,7 @@ bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log tag", "
 bord.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 ```
 
-Each of the logging functions above will return **True** if the *message could be logged* and **False** if it was blocked by a setting.
+Each of the logging functions above will return **True** if the *message could be logged* and **False** if it was blocked by a setting. Each of the functions can be treated like **log.Printf** and **fmt.printf**, [click here](https://golang.org/pkg/fmt/) for documentation on formatting.
 
 ## Options & Customization
 
@@ -65,6 +65,8 @@ bord.SetLogCustom(false)
 ```
 Each of the above functions will return the updated bitmask (uint8)
 
+---
+
 A bitmask is used to calcualte what get outputted:
 * fatal = 1
 * error = 2
@@ -80,10 +82,14 @@ bord.SetLogBitmask(59) // Will turn on everything except warnings (4) 1+2+8+16+3
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
+---
+
 The default output is **os.Stderr**, but this can be changed with:
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
+
+---
 
 It is also possible to change the time format of the logging message.
 
@@ -92,8 +98,9 @@ The default time format is **2006-01-02 15:04:05** but can be changed to any sup
 ```go
 bord.SetTimeFormat("2006-01-02 15:04:05")
 ```
-[Click here for documentation](https://golang.org/pkg/time/).
+[Click here](https://golang.org/pkg/time/) for documentation. 
 
+---
 
 ## Roadmap
 - [X] Basic functionality
