@@ -141,5 +141,23 @@ func TestSetLogFatal(t *testing.T) {
 	if bitmask&logFatal == 0 {
 		t.Fatalf("Expected fatal logging to be turned on")
 	}
+}
+
+func TestUpdateTimeFormat(t *testing.T) {
+
+	defaultFormat := "2006-01-02 15:04:05"
+	newFormat := "2006-01-02"
+
+	SetTimeFormat(newFormat)
+
+	if timeFormat != newFormat {
+		t.Fatalf("Expected %s got %s", newFormat, timeFormat)
+	}
+
+	SetTimeFormat(defaultFormat)
+
+	if timeFormat != defaultFormat {
+		t.Fatalf("Expected %s got %s", defaultFormat, timeFormat)
+	}
 
 }

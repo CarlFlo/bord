@@ -2,7 +2,7 @@
 
 Bord is a simple to use logger for the [GO](https://golang.org/) programming language
 
-Test coverage: **93.3%**
+Test coverage: **93.6%**
 
 ## Features
 - Detailed logging showing the message origin file, calling function and line.
@@ -29,11 +29,13 @@ By default will Bord output **all types** of log messages to **os.Stderr**.
 
 Example syntax is:
 ```go
-bord.Fatal("This is a fatal log message: '%s'", err) // Will os.Exit(1)
+bord.Fatal("This is a fatal log message: '%s'", err) // Will run os.Exit(1)
 bord.Error("This is an error message: '%s'", err)
 bord.Warn("This is a warning message '%s'", "<warning message>")
 bord.Info("This is an info message '%s'", "<info message>")
 bord.Debug("This is a debug message '%s'", "<debug message>")
+
+// Custom messages
 bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log tag", "custom")
 bord.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 ```
@@ -82,6 +84,16 @@ The default output is **os.Stderr**, but this can be changed with:
 ```go
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
+
+It is also possible to change the time format of the logging message.
+
+The default time format is **2006-01-02 15:04:05** but can be changed to any supported string
+
+```go
+bord.SetTimeFormat("2006-01-02 15:04:05")
+```
+[Click here for documentation](https://golang.org/pkg/time/).
+
 
 ## Roadmap
 - [X] Basic functionality
