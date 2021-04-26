@@ -28,7 +28,8 @@ var (
 func init() {
 
 	defaultWriter = os.Stderr
-	logBitmask = logFatal | logError | logWarning | logInfo | logDebug | logCustom
+	//logBitmask = logFatal | logError | logWarning | logInfo | logDebug | logCustom
+	TurnOnAllLogging()
 }
 
 // This is the only logging that wont return a bool if it worked as it will
@@ -104,8 +105,14 @@ func SetDefaultWriter(newWriter io.Writer) {
 
 // A log gets printed if the bitmask 'allows it'.
 // This function allows the user to quickly update the entire bitmask
-func SetLogBitmask(bitmask uint8) {
+func SetLogBitmask(bitmask uint8) uint8 {
 	logBitmask = bitmask
+	return logBitmask
+}
+
+func TurnOnAllLogging() uint8 {
+	logBitmask = logFatal | logError | logWarning | logInfo | logDebug | logCustom
+	return logBitmask
 }
 
 // These functions allows the user to toggle each type of log individually

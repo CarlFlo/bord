@@ -11,7 +11,16 @@ func init() {
 
 func TestLoggingOn(t *testing.T) {
 
-	SetLogBitmask(63) // 1+2+4+8+16+32=63
+	bitmask := TurnOnAllLogging()
+	if bitmask != 63 {
+		t.Fatalf("Bitmask did not set correctly Expected '63' got '%d'\n", bitmask)
+	}
+
+	bitmask = SetLogBitmask(63) // 1+2+4+8+16+32=63
+	if bitmask != 63 {
+		t.Fatalf("Bitmask did not set correctly Expected '63' got '%d'\n", bitmask)
+	}
+
 	if ok := Error("Test %s", "error"); !ok {
 		t.Fatalf("Logging error failed when it should have worked\n")
 	}
@@ -31,7 +40,11 @@ func TestLoggingOn(t *testing.T) {
 
 func TestLoggingOff(t *testing.T) {
 
-	SetLogBitmask(0)
+	bitmask := SetLogBitmask(0)
+	if bitmask != 0 {
+		t.Fatalf("Bitmask did not set correctly Expected '0' got '%d'\n", bitmask)
+	}
+
 	if ok := Error("Test %s", "error"); ok {
 		t.Fatalf("Logging error worked when it should have failed\n")
 	}
