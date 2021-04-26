@@ -2,7 +2,7 @@
 
 Bord is a simple to use logger for the [GO](https://golang.org/) programming language
 
-Test coverage: **100%**
+Test coverage: **92.5%**
 
 ## Features
 - Detailed logging showing the message origin file, calling function and line.
