@@ -49,7 +49,7 @@ func TestLoggingOff(t *testing.T) {
 	}
 }
 
-func TestIndividual(t *testing.T) {
+func TestIndividualOn(t *testing.T) {
 
 	SetLogError(true)
 	if ok := Error("Test %s", "error"); !ok {
@@ -71,6 +71,9 @@ func TestIndividual(t *testing.T) {
 	if ok := Custom(ioutil.Discard, "CUSTOM", "Test %s", "custom"); !ok {
 		t.Fatalf("Logging custom failed it should have worked\n")
 	}
+}
+
+func TestIndividualOff(t *testing.T) {
 
 	SetLogError(false)
 	if ok := Error("Test %s", "error"); ok {

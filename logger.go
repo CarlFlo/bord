@@ -57,7 +57,7 @@ func Debug(format string, args ...interface{}) bool {
 // A custom logger that can be used
 func Custom(writer io.Writer, logLevelString string, format string, args ...interface{}) bool {
 	// The numerical log level for a custom log message is 1
-	return formatter(writer, 1, logLevelString, format, args...)
+	return formatter(writer, logCustom, logLevelString, format, args...)
 }
 
 // Returns true on success and false on block
@@ -82,7 +82,7 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 func getDetails() (string, string, int) {
 	pc, path, line, ok := runtime.Caller(3)
 
-	// Something went wrong
+	// Something went wrong'
 	if !ok {
 		return "???", "???", -1
 	}
