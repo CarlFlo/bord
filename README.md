@@ -13,7 +13,7 @@ Test coverage: **93.3%**
 ## Install
 
 ```
-  go get github.com/CarlFlo/bord
+go get github.com/CarlFlo/bord
 ```
 
 The main functionality is working, but i'm always working to improve the package and fix bugs.
