@@ -85,7 +85,7 @@ bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 
 ## Roadmap
 - [X] Basic functionality
-- [X] Ability to customize what gets logged
+- [X] Ability to customize what gets logged (log types)
 - [X] Additional message logging types (such as Custom and Fatal)
 - [X] Test coverage above at least 80%
 - [X] Additional error checking
