@@ -29,7 +29,7 @@ By default will Bord output **all types** of log messages to **os.Stderr**.
 
 Example syntax is:
 ```go
-bord.Fatal("This is an fatal log message: '%s'", err) // Will os.Exit(1)
+bord.Fatal("This is a fatal log message: '%s'", err) // Will os.Exit(1)
 bord.Error("This is an error message: '%s'", err)
 bord.Warn("This is a warning message '%s'", "<warning message>")
 bord.Info("This is an info message '%s'", "<info message>")
