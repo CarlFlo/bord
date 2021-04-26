@@ -61,16 +61,17 @@ bord.SetLogCustom(false)
 Each of the above functions will return the updated bitmap (uint8)
 
 A bitmask is used to calcualte what get outputted:
-* custom = 1
+* fatal = 1
 * error = 2
 * warning = 4
 * info = 8
 * debug = 16
+* custom = 32
 
 This allows the user to input a prepared value, i.e. from a configuration file, to set the desired logging.
 ```go
-bord.SetLogBitmask(31) // Will turn on everything 1+2+4+8+16=31
-bord.SetLogBitmask(27) // Will turn on everything except warnings (4) 1+2+8+16=27
+bord.SetLogBitmask(31) // Will turn on everything 1+2+4+8+16+32=63
+bord.SetLogBitmask(27) // Will turn on everything except warnings (4) 1+2+8+16+32=59
 bord.SetLogBitmask(0) // Turns off all logging
 ```
 
