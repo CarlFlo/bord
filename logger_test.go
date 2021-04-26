@@ -2,6 +2,8 @@ package bord
 
 import (
 	"io/ioutil"
+	"os"
+	"os/exec"
 	"testing"
 )
 
@@ -108,4 +110,22 @@ func TestIndividualOff(t *testing.T) {
 	if ok := Custom(ioutil.Discard, "CUSTOM", "Test %s", "custom"); ok {
 		t.Fatalf("Logging custom worked it should have failed\n")
 	}
+}
+
+// Code stolen from https://talks.golang.org/2014/testing.slide#23
+// Subprocess test
+// Won't generate test converage for 'Fatal'
+func TestFatal(t *testing.T) {
+	if os.Getenv("BE_CRASHER") == "1" {
+		Fatal("This is a fatal log message that will exit the program")
+		return
+	}
+	cmd := exec.Command(os.Args[0], "-test.run=TestFatal")
+	cmd.Env = append(os.Environ(), "BE_CRASHER=1")
+	err := cmd.Run()
+
+	if e, ok := err.(*exec.ExitError); ok && !e.Success() {
+		return
+	}
+	t.Fatalf("Fatal exited with %v, want exit status 1", err)
 }

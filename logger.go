@@ -83,7 +83,7 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 func getDetails() (string, string, int) {
 	pc, path, line, ok := runtime.Caller(3)
 
-	// Something went wrong'
+	// Something went wrong
 	if !ok {
 		return "???", "???", -1
 	}
