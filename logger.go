@@ -64,7 +64,7 @@ func formatter(writer io.Writer, numericalLogLevel uint8, logLevelString string,
 
 	message := fmt.Sprintf(format, args...)
 
-	// <date and time> [<log level>] .\<filePath>:<line number> <formatted message>\n
+	// <date and time> [<log level>] <filePath>:<line number>:<caller>() <formatted message>\n
 	fmt.Fprintf(writer, "%s [%s] %s:%d:%s() %s\n", now, logLevelString, fileName, line, caller, message)
 	return true
 }
