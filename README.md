@@ -83,7 +83,7 @@ The default output is **os.Stderr**, but this can be changed with:
 bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
 
-## TODO
+## Roadmap
 - [X] Basic functionality
 - [X] Ability to customize what gets logged
 - [X] Additional message logging types (such as Custom and Fatal)
