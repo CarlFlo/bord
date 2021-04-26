@@ -84,8 +84,9 @@ bord.SetDefaultWriter(newWriter) // Will accept any io.Writer
 ```
 
 ## TODO
-- [X] Finish basic main functionality
-- [X] Added ability to customize what gets logged
-- [X] Added additional message logging types (such as Fatal and Custom)
+- [X] Basic functionality
+- [X] Ability to customize what gets logged
+- [X] Additional message logging types (such as Custom and Fatal)
 - [X] Test coverage above at least 80%
+- [X] Additional error checking
 - [ ] Option for 'verbosity' for each type of log message
