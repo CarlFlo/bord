@@ -129,3 +129,17 @@ func TestFatal(t *testing.T) {
 	}
 	t.Fatalf("Fatal exited with %v, want exit status 1", err)
 }
+
+func TestSetLogFatal(t *testing.T) {
+	bitmask := SetLogFatal(false)
+
+	if bitmask&logFatal != 0 {
+		t.Fatalf("Expected fatal logging to be turned off")
+	}
+
+	bitmask = SetLogFatal(true)
+	if bitmask&logFatal == 0 {
+		t.Fatalf("Expected fatal logging to be turned on")
+	}
+
+}

@@ -2,7 +2,7 @@
 
 Bord is a simple to use logger for the [GO](https://golang.org/) programming language
 
-Test coverage: **93%**
+Test coverage: **93.3%**
 
 ## Features
 - Detailed logging showing the message origin file, calling function and line.
@@ -29,6 +29,7 @@ By default will Bord output **all types** of log messages to **os.Stderr**.
 
 Example syntax is:
 ```go
+bord.Fatal("This is an fatal log message: '%s'", err) // Will os.Exit(1)
 bord.Error("This is an error message: '%s'", err)
 bord.Warn("This is a warning message '%s'", "<warning message>")
 bord.Info("This is an info message '%s'", "<info message>")
@@ -45,6 +46,7 @@ To customize the logging messages that get displayed can the following syntax be
 
 ```go
 // To turn on indivudual logging
+bord.SetLogFatal(true)
 bord.SetLogError(true)
 bord.SetLogWarning(true)
 bord.SetLogInfo(true)
@@ -52,6 +54,7 @@ bord.SetLogDebug(true)
 bord.SetLogCustom(true)
 
 // To turn off indivudual logging
+bord.SetLogFatal(false)
 bord.SetLogError(false)
 bord.SetLogWarning(false)
 bord.SetLogInfo(false)

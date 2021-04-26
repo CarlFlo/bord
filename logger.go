@@ -117,6 +117,10 @@ func TurnOnAllLogging() uint8 {
 
 // These functions allows the user to toggle each type of log individually
 // Returns the logBitmask after the chang
+func SetLogFatal(b bool) uint8 {
+	logToggle(b, logFatal)
+	return logBitmask
+}
 func SetLogError(b bool) uint8 {
 	logToggle(b, logError)
 	return logBitmask
