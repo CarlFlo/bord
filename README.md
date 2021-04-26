@@ -61,7 +61,7 @@ bord.SetLogInfo(false)
 bord.SetLogDebug(false)
 bord.SetLogCustom(false)
 ```
-Each of the above functions will return the updated bitmap (uint8)
+Each of the above functions will return the updated bitmask (uint8)
 
 A bitmask is used to calcualte what get outputted:
 * fatal = 1
