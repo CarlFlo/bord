@@ -7,7 +7,7 @@ Test coverage: **93.6%**
 ## Features
 - Detailed. Comprehensive logging showing the message origin file, calling function and line.
 - Customizable. Easy to customize and toogle specific messages types on or off.
-- Simplistic. No initial configuration to get started.
+- Simplistic. No initial configuration required to get started.
 
 
 ## Install
