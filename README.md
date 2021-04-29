@@ -40,7 +40,7 @@ bord.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log tag", "
 bord.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 ```
 
-Each of the logging functions above will return **True** if the *message could be logged* and **False** if it was blocked by a setting. Each of the functions can be treated like **log.Printf** and **fmt.printf**, [click here](https://golang.org/pkg/fmt/) for documentation on formatting.
+Each of the logging functions above will return **True** if the message could be logged and **False** if it was blocked by a setting. Each of the functions can be treated like **log.Printf** and **fmt.printf**, [click here](https://golang.org/pkg/fmt/) for documentation on formatting.
 
 ## Options & Customization
 
