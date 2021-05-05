@@ -117,6 +117,8 @@ func SetDefaultWriter(newWriter io.Writer) {
 // SetLogBitmask allows for changing the permission of what types of log messages gets outputted.
 // A log gets printed if the bitmask 'allows it'.
 // This function allows the user to quickly update the entire bitmask.
+//
+// The value '63' will turn on all logging
 func SetLogBitmask(bitmask uint8) uint8 {
 	logBitmask = bitmask
 	return logBitmask
