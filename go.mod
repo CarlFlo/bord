@@ -1,3 +1,3 @@
-module github.com/CarlFlo/bord
+module github.com/CarlFlo/malm
 
 go 1.16

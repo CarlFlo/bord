@@ -1,4 +1,4 @@
-package bord
+package malm
 
 import (
 	"fmt"
