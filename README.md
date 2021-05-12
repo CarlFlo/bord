@@ -27,6 +27,7 @@ By default will Malm output **all types** of log messages to **os.Stderr**.
 
 Example syntax:
 ```go
+// Arguments are handled in the manner of fmt.Printf, with '\n' automatically added to the end.
 malm.Fatal("Fatal log message: '%s'", err) // Will run os.Exit(1)
 malm.Error("Error log message: '%s'", err)
 malm.Warn("Warning log message")
@@ -39,6 +40,10 @@ malm.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 ```
 
 Each of the logging functions above will return **True** if the message could be logged and **False** if it was blocked by a setting. Each of the functions, except **Custom**, can be treated like **log.Printf** and **fmt.printf**. [Click here](https://golang.org/pkg/fmt/) for documentation on formatting.
+
+
+
+
 
 ## Options & Customization
 
