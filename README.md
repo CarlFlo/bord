@@ -20,20 +20,18 @@ The main functionality is working, but i'm always working to improve and fix bug
 
 ## Usage
 
-The goal of Board is to make powerful logging simple.
-
-You are able to get started with no configuration required.
+The goal of Board is to make powerful logging simple and you are able to get started with no configuration required.
 
 By default will Malm output **all types** of log messages to **os.Stderr**.
 
 
-Example syntax is:
+Example syntax:
 ```go
-malm.Fatal("This is a fatal log message: '%s'", err) // Will run os.Exit(1)
-malm.Error("This is an error message: '%s'", err)
-malm.Warn("This is a warning message '%s'", "<warning message>")
-malm.Info("This is an info message '%s'", "<info message>")
-malm.Debug("This is a debug message '%s'", "<debug message>")
+malm.Fatal("Fatal log message: '%s'", err) // Will run os.Exit(1)
+malm.Error("Error log message: '%s'", err)
+malm.Warn("Warning log message")
+malm.Info("Info log message")
+malm.Debug("Debug log message")
 
 // Custom messages
 malm.Custom(os.Stderr, "CUSTOM", "This is a %s message with a custom log tag", "custom")
