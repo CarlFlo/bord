@@ -78,7 +78,7 @@ A bitmask is used to calcualte what get outputted:
 * debug = 16
 * custom = 32
 
-This allows the user to input a prepared value, i.e. from a configuration file, to set the desired logging.
+This allows the user to input a prepared value from, e.g. a configuration file to set the desired logging.
 ```go
 malm.SetLogBitmask(63) // Will turn on everything 1+2+4+8+16+32=63
 malm.SetLogBitmask(59) // Will turn on everything except warnings (4) 1+2+8+16+32=59
