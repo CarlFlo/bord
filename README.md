@@ -6,7 +6,7 @@ Test coverage: **93.6%**
 
 ## Features
 - Detailed. Comprehensive logging showing the message origin file, calling function and line.
-- Customizable. Easy to customize and toogle specific messages types on or off.
+- Customizable. Easy to customize and toggle specific messages types on or off.
 - Simplistic. No initial configuration required to get started.
 
 
@@ -16,13 +16,13 @@ Test coverage: **93.6%**
 go get github.com/CarlFlo/malm
 ```
 
-The main functionality is working, but i'm always working to improve and fix bugs within the package.
+The main functionality is working, but I'm always working to improve and fix bugs within the package.
 
 ## Usage
 
-The goal of Board is to make powerful logging simple and you are able to get started with no configuration required.
+The goal of Malm is to make powerful logging simple, and you are able to get started with no configuration required.
 
-By default will Malm output **all types** of log messages to **os.Stderr**.
+By default, Malm will output **all types** of log messages to **os.Stderr**.
 
 
 Example syntax:
@@ -42,12 +42,9 @@ malm.Custom(os.Stderr, "NETWORK", "Another example with a different log tag")
 Each of the logging functions above will return **True** if the message could be logged and **False** if it was blocked by a setting. Each of the functions, except **Custom**, can be treated like **log.Printf** and **fmt.printf**. [Click here](https://golang.org/pkg/fmt/) for documentation on formatting.
 
 
-
-
-
 ## Options & Customization
 
-To customize the logging messages that get displayed can the following syntax be used to change the settings.
+To customize the logging messages that get displayed, the following syntax be used to change the settings.
 
 ```go
 // To turn on indivudual logging
@@ -96,7 +93,7 @@ malm.SetDefaultWriter(newWriter) // Will accept any io.Writer
 
 It is also possible to change the time format of the logging message.
 
-The default time format is **2006-01-02 15:04:05** but can be changed to any supported string
+The default time format is **2006-01-02 15:04:05** but can be changed to any supported string.
 
 ```go
 malm.SetTimeFormat("2006-01-02 15:04:05")
@@ -107,7 +104,7 @@ malm.SetTimeFormat("2006-01-02 15:04:05")
 
 ## Roadmap
 - [X] Basic functionality
-- [X] Ability to customize which log types that gets logged
+- [X] Ability to customize which log types gets logged
 - [X] Additional message logging types (such as Custom and Fatal)
 - [X] Test coverage above at least 80%
 - [X] Additional error checking
