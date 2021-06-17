@@ -61,7 +61,7 @@ func Debug(format string, args ...interface{}) bool {
 	return formatter(defaultWriter, logDebug, "DEBUG", format, args...)
 }
 
-// Debug is used for logging a customized messages under the tag of the users choice.
+// Custom is used for logging a customized messages under the tag of the users choice.
 // It allows the specification of a custom io.Writer, the default is os.Stderr.
 // logTag is a string that specifices what the tag will say.
 func Custom(writer io.Writer, logTag string, format string, args ...interface{}) bool {
