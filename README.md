@@ -1,5 +1,7 @@
 # Malm
 
+![Tests](https://github.com/CarlFlo/malm/actions/workflows/go.yml/badge.svg)
+
 Malm is a simple to use logger for the [GO](https://golang.org/) programming language.
 
 Test coverage: **93.6%**
