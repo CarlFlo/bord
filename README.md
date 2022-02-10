@@ -49,7 +49,7 @@ Each of the logging functions above will return **True** if the message could be
 To customize the logging messages that get displayed, the following syntax be used to change the settings.
 
 ```go
-// To turn on indivudual logging
+// To turn on indivudual logging (Default state)
 malm.SetLogFatal(true)
 malm.SetLogError(true)
 malm.SetLogWarning(true)
@@ -69,7 +69,7 @@ Each of the above functions will return the updated bitmask (uint8)
 
 ---
 
-A bitmask is used to calcualte what get outputted:
+A bitmask is used to calculate what get outputted:
 * fatal = 1
 * error = 2
 * warning = 4
