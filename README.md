@@ -65,7 +65,28 @@ malm.SetLogInfo(false)
 malm.SetLogDebug(false)
 malm.SetLogCustom(false)
 ```
-Each of the above functions will return the updated bitmask (uint8)
+
+To customize the logging messages verbosity, the following syntax be used to change the settings.
+
+```go
+// To turn on verbose logging (Default state)
+malm.SetLogVerboseFatal(true)
+malm.SetLogVerboseError(true)
+malm.SetLogVerboseWarning(true)
+malm.SetLogVerboseInfo(true)
+malm.SetLogVerboseDebug(true)
+malm.SetLogVerboseCustom(true)
+
+// To turn off verbose logging
+malm.SetLogVerboseFatal(false)
+malm.SetLogVerboseError(false)
+malm.SetLogVerboseWarning(false)
+malm.SetLogVerboseInfo(false)
+malm.SetLogVerboseDebug(false)
+malm.SetLogVerboseCustom(false)
+```
+
+Each of the above functions will return a copy of the updated bitmask (uint8)
 
 ---
 
