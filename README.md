@@ -86,6 +86,13 @@ malm.SetLogVerboseDebug(false)
 malm.SetLogVerboseCustom(false)
 ```
 
+```go
+// A verbose message looks like this:
+<date and time> [<log tag>] <filePath>:<line number>:<caller>() <formatted message>\n
+
+// A non-verbose message looks like this
+<date and time> [<log tag>] <formatted message>\n
+```
 Each of the above functions will return a copy of the updated bitmask (uint8)
 
 ---
@@ -103,6 +110,13 @@ This allows the user to input a prepared value from, e.g. a configuration file t
 malm.SetLogBitmask(63) // Will turn on everything 1+2+4+8+16+32=63
 malm.SetLogBitmask(59) // Will turn on everything except warnings (4) 1+2+8+16+32=59
 malm.SetLogBitmask(0) // Turns off all logging
+```
+
+This allows the user to input a prepared value from, e.g. a configuration file to set the desired logging.
+```go
+malm.SetLogVerboseBitmask(63) // Will turn on verbosity for everything 1+2+4+8+16+32=63
+malm.SetLogVerboseBitmask(59) // Will turn on verbosity for everything except warnings (4) 1+2+8+16+32=59
+malm.SetLogVerboseBitmask(0) // Turns off verbosity for all logging messages
 ```
 
 ---
@@ -132,4 +146,4 @@ malm.SetTimeFormat("2006-01-02 15:04:05")
 - [X] Test coverage above at least 80%
 - [X] Additional error checking
 - [X] Ability to change the time format
-- [ ] Option for 'verbosity' for each type of log message
+- [X] Option for 'verbosity' for each type of log message
